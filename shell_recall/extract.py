@@ -1,9 +1,14 @@
 import subprocess
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
+ATUIN = os.getenv("SHELL_RECALL_ATUIN_PATH", "atuin")
 
 def fetch_new_commands():
     fmt = "{time} | {directory} | {command}"
     cmd = [
-        "atuin", "search",
+        ATUIN, "search",
         "--after", "yesterday",
         "--format", fmt
     ]

@@ -61,6 +61,7 @@ shell-recall/
 ## ⚙️ Setup
 
 ### 1. Install Dependencies
+It's currently only using `python-dotenv`
 
 ```bash
 pip install -r requirements.txt
@@ -72,6 +73,7 @@ pip install -r requirements.txt
 ```env
 SHELL_RECALL_VAULT=/absolute/path/to/your/obsidian/vault/terminal-journal
 SHELL_RECALL_MODEL=your-ollama-model-name
+SHELL_RECALL_ATUIN_PATH=/absolute/path/to/ATUIN
 ```
 
 ### 3. Initialize Atuin
@@ -86,6 +88,7 @@ atuin search --after "yesterday"
 
 ## 🚀 Run It
 
+### Manual
 ```bash
 python3 -m shell_recall.main
 ```
@@ -95,7 +98,15 @@ This will:
 - Group + summarize them
 - Append them to the correct Markdown file in your vault
 
-You can schedule it daily via `cron` or `systemd` if desired.
+### Automated
+
+If you want this to run daily without manual intervention, you can set it up using either:
+
+    systemd (recommended for desktop Linux users)
+
+    cron (simple for server environments)
+
+Automation setup is optional and not required to use the tool.
 
 ---
 

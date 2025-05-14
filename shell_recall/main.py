@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from dotenv import load_dotenv
+load_dotenv()
 from shell_recall.extract import fetch_new_commands
 from shell_recall.group import group_commands
 from shell_recall.summarize import summarize_session
@@ -8,7 +9,6 @@ from shell_recall.write_md import write_markdown_log
 
 import os
 
-load_dotenv()
 print("Vault path is:", os.getenv("SHELL_RECALL_VAULT"))
 
 
